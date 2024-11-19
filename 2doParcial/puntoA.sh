@@ -39,10 +39,10 @@ sudo pvcreate /dev/sdd2 /dev/sdd3 /dev/sdd5 /dev/sdd6
 sudo vgcreate vgAdmin /dev/sdd2 /dev/sdd3
 sudo vgcreate vgDevelopers /dev/sdd5 /dev/sdd6
 #crear lv
-sudo lvcreate -L vgDevelopers -n lvDevelopers
-sudo lvcreate -L vgDevelopers -n lvTester
-sudo lvcreate -L vgDevelopers -n lvDevops
-sudo lvcreate -L vgAdmin -n lvAdmin
+sudo lvcreate -L 1G vgDevelopers -n lvDevelopers
+sudo lvcreate -L 1G vgDevelopers -n lvTester
+sudo lvcreate -L 0.9G vgDevelopers -n lvDevops
+sudo lvcreate -L 1.8G vgAdmin -n lvAdmin
 #formatear
 sudo mkfs.ext4 /dev/mapper/vgDevelopers-lvDevelopers
 sudo mkfs.ext4 /dev/mapper/vgDevelopers-lvTester
